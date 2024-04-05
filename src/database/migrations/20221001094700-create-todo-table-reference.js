@@ -1,26 +1,25 @@
-export const up = (queryInterface, Sequelize) => queryInterface.createTable('users', {
+export const up = (queryInterface, Sequelize) => queryInterface.createTable('todos', {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: Sequelize.INTEGER,
   },
-  firstName: {
+  name: {
     allowNull: false,
-    type: Sequelize.STRING(30),
+    type: Sequelize.STRING(250),
   },
-  lastName: {
+  description: {
     allowNull: false,
-    type: Sequelize.STRING(30),
+    type: Sequelize.STRING(500),
   },
-  email: {
+  author: {
     allowNull: false,
-    type: Sequelize.STRING(50),
-    unique: true,
+    type: Sequelize.STRING(150),
   },
-  password: {
+  isComplete: {
     allowNull: false,
-    type: Sequelize.STRING,
+    type: Sequelize.BOOLEAN,
   },
   createdAt: {
     allowNull: false,
@@ -36,4 +35,4 @@ export const up = (queryInterface, Sequelize) => queryInterface.createTable('use
   },
 });
 
-export const down = (queryInterface) => queryInterface.dropTable('users');
+export const down = (queryInterface) => queryInterface.dropTable('todos');

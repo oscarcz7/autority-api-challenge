@@ -6,6 +6,10 @@ const router = Router();
 
 router.get('/', homeController.index);
 
-router.get('/health', homeController.healthCheck);
+router.get('/tasks', homeController.tasks);
+router.get('/task/:id', homeController.taskById);
+router.post('/task', homeController.createTask);
+router.put('/task/:id', homeController.updateTaskById);
+router.delete('/task/:id', homeController.deleteTaskById);
 
 export default router;
